@@ -18,19 +18,19 @@ main() {
     std::cout << "Starting..." << std::endl;
 
     std::cout << "" << std::endl;
-
-    for (int loop_counter = 0; loop_counter < 10; loop_counter++) {
-        std::random_device rseed;
-        std::mt19937 rgen(rseed());  // mersenne_twister
-        std::uniform_int_distribution<int> idist(0, 100);  // [0,100]
+    std::random_device rseed;
+    std::mt19937 rgen(rseed());  // mersenne_twister
+    std::uniform_int_distribution<int> idist(0, 100);  // [0,100]
+        
+    for (int loopCounter = 0; loopCounter < 10; loopCounter++) {
         randomNumber = idist(rgen);
-        randomNumbers[loop_counter] = randomNumber;
+        randomNumbers[loopCounter] = randomNumber;
     }
 
-    for (int loop_counter; loop_counter < 10; loop_counter++) {
+    for (int loopCounter; loopCounter < 10; loopCounter++) {
         std::cout << "This is random number: "
-        << randomNumbers[loop_counter] << std::endl;
-        summ = summ + randomNumbers[loop_counter];
+        << randomNumbers[loopCounter] << std::endl;
+        summ = summ + randomNumbers[loopCounter];
     }
     average = summ / 10;
 
